@@ -4,32 +4,37 @@ package com.theironyard.novauc.entities;
  * Created by jerieshasmith on 4/11/17.
  */
 public class Score {
-    private String away;
-    private String home;
+    private int away;
+    private int home;
 
 
-    public Score(){
+    public Score() {
 
     }
 
-    public Score(String away, String home) {
+    public Score(int away, int home) {
         this.away = away;
         this.home = home;
+
+
     }
 
-    public String getAway() {
+    public int getAway() {
         return away;
     }
 
-    public void setAway(String away) {
+    public void setAway(int away) {
         this.away = away;
     }
 
-    public String getHome() {
+    public int getHome() {
         return home;
     }
 
-    public void setHome(String home) {
+    public void setHome(int home) {
         this.home = home;
     }
+
 }
+
+
