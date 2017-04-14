@@ -6,17 +6,14 @@ package com.theironyard.novauc.entities;
 public class Count {
     private int balls;
     private int strike;
-    private int total;
 
-
-    public Count(){
+    public Count() {
 
     }
 
-    public Count(int balls, int strike, int total) {
+    public Count(int balls, int strike) {
         this.balls = balls;
         this.strike = strike;
-        this.total = total;
     }
 
     public int getBalls() {
@@ -34,12 +31,8 @@ public class Count {
     public void setStrike(int strike) {
         this.strike = strike;
     }
-
-    public int getTotal() {
-        return total;
-    }
-
-    public void setTotal(int total) {
-        this.total = total;
-    }
 }
+
+
+
+
