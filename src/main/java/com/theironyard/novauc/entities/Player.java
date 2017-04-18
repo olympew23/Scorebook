@@ -18,10 +18,10 @@ public class Player {
 
     }
 
-    public Player(String name, String position, int number, int posNumber) {
+    public Player(String name,int number, String position,  int posNumber) {
         this.name = name;
-        this.position = position;
         this.number = number;
+        this.position = position;
         this.posNumber = posNumber;
     }
 

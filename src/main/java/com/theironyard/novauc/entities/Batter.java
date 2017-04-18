@@ -11,8 +11,8 @@ public class Batter extends Player {
 
     }
 
-    public Batter(String name, String position, int number, int posNumber, String results) {
-        super(name, position, number, posNumber);
+    public Batter(String name,  int number, String position,  int posNumber, String results) {
+        super(name,number, position,  posNumber);
         this.results = results;
     }
 

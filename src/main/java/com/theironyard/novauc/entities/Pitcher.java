@@ -11,8 +11,8 @@ public Pitcher(){
 
 }
 
-    public Pitcher(String name, String position, int number, int posNumber, int pitchCount) {
-        super(name, position, number, posNumber);
+    public Pitcher(String name, int number,  String position,  int posNumber, int pitchCount) {
+        super(name, number,position,  posNumber);
         this.pitchCount = pitchCount;
     }
 

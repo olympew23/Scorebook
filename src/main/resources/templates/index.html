@@ -8,7 +8,8 @@
     <link href="/css/scorebook.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<a href="home.html"/>
+<a href="player.html"/>
 
 
 
@@ -27,25 +28,6 @@
 
 </style>
 </head>
-
-<form action="/add-score" method="post">
-    <input type="text" placeholder="Away" name="scoreText"/>
-    <input type="text" placeholder="Home" name="scoreText"/>
-    <button type="submit">Save</button>
-</form>
-
-<form action="/add-outs" method="post">
-    <input type="text" placeholder="Enter Outs" name="outsText"/>
-    <button type="submit">Save</button>
-</form>
-
-<form action="/game-count" method="post">
-    <select name="countText">
-        <option value="balls">Balls</option>
-        <option value="strikes">Strikes</option>
-    </select>
-    <button type="submit">Save</button>
-</form>
 <form action="/home-player" method="post">
     <input type="text" placeholder="Player name" name="playerText"/>
     <input type="text" placeholder="#" name="playerNumber"/>
@@ -125,70 +107,6 @@
     <input type="text" placeholder="Position#" name="positionNumber8"/><br>
     <button type="submit">Submit</button>
 
-
-
-
 </form>
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm-4">
-            <h3>Home</h3>
-            <ol>
-                {{#player}}
-                <li>{{name}} {{number}} {{position}} {{posNumber}} </li>
-                {{/player}}
-            </ol>
-
-        </div>
-        <div class="col-sm-4">
-            <h3>Score</h3>
-            {{scores.away}}
-            {{scores.home}}
-        </div>
-        <div class="col-sm-4">
-            <h3>Away</h3>
-            <ol>
-                {{#playerList}}
-                <li>{{name}} {{number}} {{position}} {{posNumber}}</li>
-                {{/playerList}}
-
-            </ol>
-
-        </div>
-    </div>
-</div>
-
-
-
-<br><br>
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm-4">
-            <h3>Pitch Count</h3>
-            {{pitcher.pitchCount}}
-        </div>
-        <div class="col-sm-4">
-            <h3>Innings</h3>
-            {{innings.outs}}
-            {{innings.number}}
-        </div>
-
-    </div>
-</div>
-
-
 </body>
-
-
-
-
-
-<footer class="container-fluid text-center">
-
-</footer>
-
-
 </html>

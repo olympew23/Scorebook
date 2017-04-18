@@ -8,6 +8,7 @@ public class Innings {
     private String number;
     private int outs;
     private int totalOuts;
+    private boolean isEven;
 
 
     public Innings() {
@@ -18,9 +19,8 @@ public class Innings {
         this.number = number;
         this.outs = outs;
         this.totalOuts = totalOuts;
+        this.isEven = isEven;
     }
-
-
 
     public String getNumber() {
         return number;
@@ -44,5 +44,13 @@ public class Innings {
 
     public void setTotalOuts(int totalOuts) {
         this.totalOuts = totalOuts;
+    }
+
+    public boolean isEven() {
+        return isEven;
+    }
+
+    public void setEven(boolean even) {
+        isEven = even;
     }
 }
