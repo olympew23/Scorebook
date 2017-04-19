@@ -237,7 +237,7 @@ public class GameController {
      public String save(Model model, HttpSession session) throws IOException {
 
 
-        PrintWriter outputFile = new PrintWriter("love.html");
+        PrintWriter outputFile = new PrintWriter("//templates//happy.html");
 
          URL url = new URL("http://localhost:8080/home");
 
