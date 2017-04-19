@@ -8,26 +8,25 @@
     <link href="/css/scorebook.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<a href="home.html"/>
-<a href="player.html"/>
+
+
+    <style>
+        body {
+            -webkit-background-image: url("images.jpeg");
+        }
 
 
 
+
+
+
+    </style>
+</head>
 
 
 <body>
-<style>
-    body {
-        background-color: cadetblue;
-    }
 
 
-
-
-
-
-</style>
-</head>
 <form action="/home-player" method="post">
     <input type="text" placeholder="Player name" name="playerText"/>
     <input type="text" placeholder="#" name="playerNumber"/>
@@ -67,7 +66,7 @@
     <input type="text" placeholder="Position#" name="positionNumber8"/><br>
     <button type="submit">Submit</button>
 </form>
-
+<br><br>
 <form action="/away-player" method="post">
     <input type="text" placeholder="Player name" name="playerText"/>
     <input type="text" placeholder="#" name="playerNumber"/>
@@ -108,5 +107,11 @@
     <button type="submit">Submit</button>
 
 </form>
+{{#player}}
+{{name}}
+{{/player}}
+{{#playerList}}
+{{name}}
+{{/playerList}}
 </body>
 </html>

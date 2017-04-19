@@ -76,38 +76,37 @@
         <button type="submit">Save</button>
 </form>
 
-<form action="/add-user" method="post">
-    <input type="text" placeholder="Name" name="userName"/>
-    <input type="text" placeholder="Password" name="passWord"/>
-    <button type="submit">Submit</button>
+
+
+
+
 </form>
-
-
-
-
     <div class="container-fluid bg-3 text-center">
         <div class="row">
             <div class="col-sm-3">
                 <h3>Home</h3>
                 <ol>
-                    {{#player}}
-                    <li>{{name}} {{number}} {{position}} {{posNumber}} </li>
-                    {{/player}}
+                    <li>9 9 9 9 </li>
+                    <li>9 9 9 9 </li>
+                    <li>9 9 9 9 </li>
+                    <li>9 9 9 9 </li>
+                    <li>9 9 9 9 </li>
+                    <li>9 9 9 9 </li>
+                    <li>9 9 9 9 </li>
+                    <li>9 9 9 9 </li>
+                    <li>9 9 9 9 </li>
                 </ol>
 
             </div>
             <div class="col-sm-3">
                 <h3>Score</h3>
-                {{scores.away}}
-                {{scores.home}}
+                0
+                0
 
             </div>
             <div class="col-sm-3">
                 <h3>Away</h3>
                 <ol>
-                    {{#playerList}}
-                    <li>{{name}} {{number}} {{position}} {{posNumber}}</li>
-                    {{/playerList}}
 
                 </ol>
 
@@ -123,17 +122,17 @@
     <div class="row">
         <div class="col-sm-4">
             <h3>Pitch Count</h3>
-            {{pitcher.pitchCount}}
+            1
         </div>
         <div class="col-sm-4">
             <h3>Count</h3>
-             {{counts.balls}}
-              {{counts.strike}}
+             0
+              1
         </div>
         <div class="col-sm-4">
             <h3>Innings</h3>
-            {{innings.outs}}
-            {{innings.number}}
+            0
+            1T
         </div>
 
     </div>

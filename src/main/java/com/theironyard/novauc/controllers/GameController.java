@@ -6,7 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpSession;
+import java.io.*;
 import java.lang.reflect.Array;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 
 /**
@@ -21,10 +24,12 @@ public class GameController {
    static ArrayList<Player> players = new ArrayList<>();
    static ArrayList<Player> playerList = new ArrayList<>();
    static Game games = new Game();
+   static ScoreKeeper scoreKeeper = new ScoreKeeper();
+   static User users = new User();
 
 
 
-    @RequestMapping(path = "/", method = RequestMethod.GET)
+    @RequestMapping(path = "/home", method = RequestMethod.GET)
     public String home(Model model){
         model.addAttribute("scores",scores);
         model.addAttribute("innings", innings);
@@ -32,12 +37,41 @@ public class GameController {
         model.addAttribute("pitcher",pitcher);
         model.addAttribute("player",players);
         model.addAttribute("playerList", playerList);
+        model.addAttribute("scoreKeeper",scoreKeeper);
+        model.addAttribute("userName", users);
 
 
 
         return "home";
 
     }
+
+
+    @RequestMapping(path = "/index", method = RequestMethod.GET)
+    public String lo(Model model, HttpSession session) {
+        if(scoreKeeper != null)
+            model.addAttribute("scoreKeeper",scoreKeeper);
+        model.addAttribute("player",players);
+        model.addAttribute("playerList",playerList);
+        return "index";
+
+
+    }
+
+    @RequestMapping(path = "/", method = RequestMethod.GET)
+    public String login(Model model, HttpSession session) {
+        model.addAttribute("scoreKeeper",scoreKeeper);
+        return "player";
+
+
+    }
+
+  @RequestMapping(path = "/user", method = RequestMethod.GET)
+   public String user(Model model, HttpSession session){
+        model.addAttribute("user" ,users);
+        return "love";
+  }
+
 
 
     @RequestMapping(path = "/home-player", method = RequestMethod.POST)
@@ -61,7 +95,7 @@ public class GameController {
         players.add(player6);
         players.add(player7);
         players.add(player8);
-        return "redirect:/";
+        return "redirect:/home";
 
     }
     @RequestMapping(path = "/away-player", method = RequestMethod.POST)
@@ -85,25 +119,26 @@ public class GameController {
         playerList.add(playerList6);
         playerList.add(playerList7);
         playerList.add(playerList8);
-        return "index";
+        return "redirect:/index";
     }
 
 
     @RequestMapping(path = "/add-score", method = RequestMethod.POST)
-    public String addScore(Model model,   HttpSession session, int scoreText){
+    public String addScore(Model model,   HttpSession session, int scoreText, int scoresText){
             scores.setAway(scores.getAway() + scoreText);
-            scores.setHome(scores.getAway() + scoreText);
-            return "redirect:/";
+            scores.setHome(scores.getHome() + scoresText);
+            return "redirect:/home";
 
     }
 
     @RequestMapping(path = "/add-outs", method = RequestMethod.POST)
     public String addOuts(Model model, HttpSession session, Integer outsText, String numberText, Boolean isEven ){
         //innings.setNumber(innings.getNumber() + 1);
-        innings.setOuts(innings.getOuts()+ outsText);
-        innings.setTotalOuts(innings.getTotalOuts() + outsText);
 
-        isEven = (innings.getTotalOuts() % 3 == 0);
+        innings.setTotalOuts(innings.getTotalOuts() + outsText);
+        innings.setOuts(innings.getTotalOuts() % 3);
+
+
 
 
         if(innings.getTotalOuts() >= 3 && innings.getTotalOuts() <= 5) {
@@ -162,12 +197,14 @@ public class GameController {
         }
 
 
-        return "redirect:/";
+        return "redirect:/home";
     }
 
     @RequestMapping(path = "/game-count", method = RequestMethod.POST)
-    public String gameCount(Model model, HttpSession session, String countText){
+    public String gameCount(Model model, HttpSession session, String countText, String countsText){
         pitcher.setPitchCount(pitcher.getPitchCount()+ 1);
+        //count.setBalls(count.getBalls() + 2 );
+       // count.setStrike(count.getStrike() + 1 );
 
         if(countText.equals("balls")) {
             if (count.getBalls() < 3) {
@@ -180,15 +217,47 @@ public class GameController {
                 }
             }
         }
-        return "redirect:/";
+        return "redirect:/home";
 
     }
 
     @RequestMapping(path = "/add-scorekeeper", method = RequestMethod.POST)
-    public String login(   Model model,HttpSession session, String scorekeeperName, String passWord) {
-        model.addAttribute("scorekeeperName",scorekeeperName);
-        ScoreKeeper scoreKeeper = new ScoreKeeper();
-        scoreKeeper.setName(scoreKeeper.getName() + scorekeeperName);
-        return "player";
+    public String login(Model model,HttpSession session, String scoreKeeper, String passWord) {
+        model.addAttribute("scoreKeeper",scoreKeeper);
+        return "redirect:/index";
     }
+
+    @RequestMapping(path = "/add-user", method = RequestMethod.POST)
+    public String addUser(Model model, HttpSession session, String userName, String passWord){
+        model.addAttribute("userName",userName);
+        return "redirect:/";
+    }
+
+     @RequestMapping(path = "/save", method = RequestMethod.POST)
+     public String save(Model model, HttpSession session) throws IOException {
+
+
+        PrintWriter outputFile = new PrintWriter("love.html");
+
+         URL url = new URL("http://localhost:8080/home");
+
+
+         URLConnection con = url.openConnection();
+         InputStream is =con.getInputStream();
+
+         BufferedReader br = new BufferedReader(new InputStreamReader(is));
+
+         String line = null;
+
+
+         while ((line = br.readLine()) != null) {
+             System.out.println(line);
+             outputFile.println(line);
+         }
+         br.close();
+         outputFile.close();
+         return "redirect:/home";
+     }
+
+
         }

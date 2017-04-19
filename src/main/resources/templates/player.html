@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,16 +8,25 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<a href="index.html"></a>
+<style>
+    body {
+
+        -webkit-background-image: url("images.jpeg");
+
+
+    }
+
+</style>
 
 </head>
+<body>
 {{#name}} Welcome! {{/name}}
 
 <form action="/add-scorekeeper" method="post">
-<input type="text" placeholder="Enter your name" name="scorekeeperName"/>
-<input type="password" name="passWord"/>
+<input type="text" placeholder="Enter your name" name="scoreKeeper"/>
+<input type="password" placeholder="Password" name="passWord"/>
 <button type="submit">Login</button>
 </form>
-<body>
+
     </body>
 </html>
