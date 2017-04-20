@@ -70,14 +70,17 @@ public class GameController {
   @RequestMapping(path = "/user", method = RequestMethod.GET)
    public String user(Model model, HttpSession session){
         model.addAttribute("user" ,users);
-        return "love";
+        return "stats.html";
   }
 
 
 
     @RequestMapping(path = "/home-player", method = RequestMethod.POST)
     public String player(Model model, HttpSession session, String playerText,Integer playerNumber, String positionText, Integer positionNumber,String playerText1,Integer playerNumber1, String positionText1, Integer positionNumber1,String playerText2,Integer playerNumber2, String positionText2, Integer positionNumber2,String playerText3 ,Integer playerNumber3, String positionText3, Integer positionNumber3,String playerText4,Integer playerNumber4, String positionText4, Integer positionNumber4,String playerText5,Integer playerNumber5, String positionText5, Integer positionNumber5,String playerText6,Integer playerNumber6, String positionText6, Integer positionNumber6,String playerText7,Integer playerNumber7, String positionText7,  Integer positionNumber7, String playerText8,Integer playerNumber8, String positionText8, Integer positionNumber8, String playerText9,Integer playerNumber9, String positionText9, Integer positionNumber9){
-        Player player = new Player(playerText,playerNumber,positionText,positionNumber);
+       batters.setResults(batters.getResults() + playerText);
+
+
+       Player player = new Player(playerText,playerNumber,positionText,positionNumber);
         Player player1 = new Player(playerText1,playerNumber1,positionText1,positionNumber1);
         Player player2 = new Player(playerText2,playerNumber2,positionText2,positionNumber2);
         Player player3 = new Player(playerText3,playerNumber3,positionText3,positionNumber3);
@@ -238,7 +241,8 @@ public class GameController {
      public String save(Model model, HttpSession session) throws IOException {
 
 
-        PrintWriter outputFile = new PrintWriter("/resources/templates/stats.html");
+        PrintWriter outputFile = new PrintWriter("/Users/jerieshasmith/Downloads/ScoreBook/public/stats.html");
+
 
          URL url = new URL("http://localhost:8080/home");
 
