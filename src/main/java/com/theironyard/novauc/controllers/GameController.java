@@ -26,6 +26,7 @@ public class GameController {
    static Game games = new Game();
    static ScoreKeeper scoreKeeper = new ScoreKeeper();
    static User users = new User();
+   static Batter batters = new Batter();
 
 
 
@@ -237,7 +238,7 @@ public class GameController {
      public String save(Model model, HttpSession session) throws IOException {
 
 
-        PrintWriter outputFile = new PrintWriter("//templates//happy.html");
+        PrintWriter outputFile = new PrintWriter("/resources/templates/stats.html");
 
          URL url = new URL("http://localhost:8080/home");
 

@@ -8,18 +8,30 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
+
     <style>
         /* Remove the navbar's default margin-bottom and rounded borders */
+
         .navbar {
-            margin-bottom: 0;
-            border-radius: 0;
+            margin-bottom: 50px;
+            border-radius: 200px;
             background-image: url("images.jpeg");
             background-repeat: repeat-x;
             background-color:lightgray;
 
         }
+        div{
+            border-style: outset;
+            font-family: "Times New Roman", Times, serif;
+            border-spacing: 15px;
+
+        }
 
 
+        img {
+            display: block;
+            margin: 0 auto;
+        }
         body {
 
             background-image: url("images.jpeg");
@@ -82,48 +94,61 @@
     <input type="text" placeholder="Password" name="passWord"/>
     <button type="submit">Submit</button>
 </form>
-
-
-
-
+    <br><br>
     <div class="container-fluid bg-3 text-center">
+
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-4">
                 <h3>Home</h3>
-                <ol>
-                    {{#player}}
-                    <li>{{name}} {{number}} {{position}} {{posNumber}} </li>
-                    {{/player}}
-                </ol>
+                <div class="panel panel-default">
+
+                    <div class="panel-body">
+                        <ol>
+                        {{#player}}
+                        <li>{{name}} {{number}} {{position}} {{posNumber}} </li>
+                        {{/player}}
+                    </ol>
+                    </div>
 
             </div>
-            <div class="col-sm-3">
+
+
+            </div>
+
+            <div class="col-sm-4">
                 <h3>Score</h3>
-                {{scores.away}}
-                {{scores.home}}
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <p>Home {{scores.home}}</p>
+                        <p>Away {{scores.away}}</p>
+
 
             </div>
-            <div class="col-sm-3">
+                </div>
+            </div>
+
+            <div class="col-sm-4">
                 <h3>Away</h3>
+
+                <div class="panel panel-default">
+                    <div class="panel-body">
                 <ol>
                     {{#playerList}}
                     <li>{{name}} {{number}} {{position}} {{posNumber}}</li>
                     {{/playerList}}
-
                 </ol>
 
             </div>
         </div>
-    </div><br><br>
-
+    </div>
+    </div>
+        </div>
     <div id="canvasDiv"></div>
     <script type="text/javascript"> $(document).ready(function() {
         prepareCanvas();
     });</script>
 
-
-
-<div class="container">
+    <div class="container">
     <div class="row">
         <div class="col-sm-4">
             <h3>Pitch Count</h3>
@@ -145,6 +170,7 @@
 
 
 </nav>
+
 </body>
 
 
