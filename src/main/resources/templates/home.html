@@ -67,8 +67,7 @@
 
 
     <form action="/add-score" method="post">
-
-    <input type="text" placeholder="Away" name="scoreText"/>
+        <input type="text" placeholder="Away" name="scoreText"/>
     <input type="text" placeholder="Home" name="scoresText"/>
     <button type="submit">Save</button>
 </form>
@@ -80,6 +79,13 @@
     <input type="text" placeholder="Enter Outs" name="outsText"/>
     <button type="submit">Save</button>
 </form>
+<form action="/batter" method="post">
+    <button type="submit">Next Batter</button>
+</form>
+    <form action="/pitcher" method="post">
+        <input type="text" placeholder="Pitcher name" name="pitcherName"/>
+        <button type="submit">Submit</button>
+    </form>
 
     <form action="/game-count" method="post">
         <select name="countText">
@@ -156,8 +162,8 @@
         </div>
         <div class="col-sm-4">
             <h3>Count</h3>
-             {{counts.balls}}
-              {{counts.strike}}
+            <p> Balls {{counts.balls}}</p>
+             <p> Strike {{counts.strike}}</p>
         </div>
         <div class="col-sm-4">
             <h3>Innings</h3>

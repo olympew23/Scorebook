@@ -76,7 +76,7 @@ public class GameController {
 
 
     @RequestMapping(path = "/home-player", method = RequestMethod.POST)
-    public String player(Model model, HttpSession session, String playerText,Integer playerNumber, String positionText, Integer positionNumber,String playerText1,Integer playerNumber1, String positionText1, Integer positionNumber1,String playerText2,Integer playerNumber2, String positionText2, Integer positionNumber2,String playerText3 ,Integer playerNumber3, String positionText3, Integer positionNumber3,String playerText4,Integer playerNumber4, String positionText4, Integer positionNumber4,String playerText5,Integer playerNumber5, String positionText5, Integer positionNumber5,String playerText6,Integer playerNumber6, String positionText6, Integer positionNumber6,String playerText7,Integer playerNumber7, String positionText7,  Integer positionNumber7, String playerText8,Integer playerNumber8, String positionText8, Integer positionNumber8, String playerText9,Integer playerNumber9, String positionText9, Integer positionNumber9){
+    public String player(Model model, HttpSession session, String playerText,Integer playerNumber, String positionText, Integer positionNumber,String playerText1,Integer playerNumber1, String positionText1, Integer positionNumber1,String playerText2,Integer playerNumber2, String positionText2, Integer positionNumber2,String playerText3 ,Integer playerNumber3, String positionText3, Integer positionNumber3,String playerText4,Integer playerNumber4, String positionText4, Integer positionNumber4,String playerText5,Integer playerNumber5, String positionText5, Integer positionNumber5,String playerText6,Integer playerNumber6, String positionText6, Integer positionNumber6,String playerText7,Integer playerNumber7, String positionText7,  Integer positionNumber7, String playerText8,Integer playerNumber8, String positionText8, Integer positionNumber8, String playerText9,Integer playerNumber9, String positionText9, Integer positionNumber9, String playerText10,Integer playerNumber10, String positionText10, Integer positionNumber10, String playerText11,Integer playerNumber11, String positionText11, Integer positionNumber11, String playerText12,Integer playerNumber12, String positionText12, Integer positionNumber12, String playerText13,Integer playerNumber13, String positionText13, Integer positionNumber13, String playerText14,Integer playerNumber14, String positionText14, Integer positionNumber14, String playerText15,Integer playerNumber15, String positionText15, Integer positionNumber15, String playerText16,Integer playerNumber16, String positionText16, Integer positionNumber16, String playerText17,Integer playerNumber17, String positionText17, Integer positionNumber17){
        batters.setResults(batters.getResults() + playerText);
 
 
@@ -89,6 +89,25 @@ public class GameController {
         Player player6 = new Player(playerText6,playerNumber6,positionText6,positionNumber6);
         Player player7 = new Player(playerText7,playerNumber7,positionText7,positionNumber7);
         Player player8 = new Player(playerText8,playerNumber8,positionText8,positionNumber8);
+        Player playerList0 = new Player(playerText9, playerNumber9, positionText9, positionNumber9);
+        Player playerList1 = new Player(playerText10, playerNumber10, positionText10, positionNumber10);
+        Player playerList2 = new Player(playerText11, playerNumber11, positionText11, positionNumber11);
+        Player playerList3 = new Player(playerText12, playerNumber12, positionText12, positionNumber12);
+        Player playerList4 = new Player(playerText13, playerNumber13, positionText13, positionNumber13);
+        Player playerList5 = new Player(playerText14, playerNumber14, positionText14, positionNumber14);
+        Player playerList6 = new Player(playerText15, playerNumber15, positionText15, positionNumber15);
+        Player playerList7 = new Player(playerText16, playerNumber16, positionText16, positionNumber16);
+        Player playerList8 = new Player(playerText17, playerNumber17, positionText17, positionNumber17);
+        playerList.add(playerList0);
+        playerList.add(playerList1);
+        playerList.add(playerList2);
+        playerList.add(playerList3);
+        playerList.add(playerList4);
+        playerList.add(playerList5);
+        playerList.add(playerList6);
+        playerList.add(playerList7);
+        playerList.add(playerList8);
+
 
         players.add(player);
         players.add(player1);
@@ -101,29 +120,6 @@ public class GameController {
         players.add(player8);
         return "redirect:/home";
 
-    }
-    @RequestMapping(path = "/away-player", method = RequestMethod.POST)
-    public String playerList(Model model, HttpSession session, String playerText,Integer playerNumber, String positionText, Integer positionNumber,String playerText1,Integer playerNumber1, String positionText1, Integer positionNumber1,String playerText2,Integer playerNumber2, String positionText2, Integer positionNumber2,String playerText3 ,Integer playerNumber3, String positionText3, Integer positionNumber3,String playerText4,Integer playerNumber4, String positionText4, Integer positionNumber4,String playerText5,Integer playerNumber5, String positionText5, Integer positionNumber5,String playerText6,Integer playerNumber6, String positionText6, Integer positionNumber6,String playerText7,Integer playerNumber7, String positionText7,  Integer positionNumber7, String playerText8,Integer playerNumber8, String positionText8, Integer positionNumber8, String playerText9,Integer playerNumber9, String positionText9, Integer positionNumber9) {
-        Player playerList0 = new Player(playerText, playerNumber, positionText, positionNumber);
-        Player playerList1 = new Player(playerText1, playerNumber1, positionText1, positionNumber1);
-        Player playerList2 = new Player(playerText2, playerNumber2, positionText2, positionNumber2);
-        Player playerList3 = new Player(playerText3, playerNumber3, positionText3, positionNumber3);
-        Player playerList4 = new Player(playerText4, playerNumber4, positionText4, positionNumber4);
-        Player playerList5 = new Player(playerText5, playerNumber5, positionText5, positionNumber5);
-        Player playerList6 = new Player(playerText6, playerNumber6, positionText6, positionNumber6);
-        Player playerList7 = new Player(playerText7, playerNumber7, positionText7, positionNumber7);
-        Player playerList8 = new Player(playerText8, playerNumber8, positionText8, positionNumber8);
-
-        playerList.add(playerList0);
-        playerList.add(playerList1);
-        playerList.add(playerList2);
-        playerList.add(playerList3);
-        playerList.add(playerList4);
-        playerList.add(playerList5);
-        playerList.add(playerList6);
-        playerList.add(playerList7);
-        playerList.add(playerList8);
-        return "redirect:/index";
     }
 
 
