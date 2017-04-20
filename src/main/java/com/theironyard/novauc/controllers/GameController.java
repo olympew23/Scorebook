@@ -43,7 +43,7 @@ public class GameController {
 
 
 
-        return "home";
+        return "info";
 
     }
 
@@ -57,6 +57,13 @@ public class GameController {
         return "index";
 
 
+    }
+
+
+    @RequestMapping(path = "/batter", method = RequestMethod.GET)
+    public String addBatter(Model model, HttpSession session){
+        model.addAttribute("batter", batters);
+        return "love";
     }
 
     @RequestMapping(path = "/", method = RequestMethod.GET)

@@ -12,10 +12,17 @@
 
     <style>
         body {
-            -webkit-background-image: url("images.jpeg");
+            background-image: url("youth-baseball-bats-4.png");
+
         }
 
-
+        h1{
+            position: relative;
+            right: 30px;
+            color: blue;
+            font-style: italic;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
 
 
@@ -28,7 +35,12 @@
 
 
 <form action="/home-player" method="post">
-    <input type="text" placeholder="Player name" name="playerText"/>
+    <div class="container">
+        <h1>Home</h1>
+        <hr>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <input type="text" placeholder="Player name" name="playerText"/>
     <input type="text" placeholder="#" name="playerNumber"/>
     <input type="text" placeholder="Position" name="positionText"/>
     <input type="text" placeholder="Position#" name="positionNumber"/><br>
@@ -64,44 +76,55 @@
     <input type="text" placeholder="#" name="playerNumber8"/>
     <input type="text" placeholder="Position" name="positionText8"/>
     <input type="text" placeholder="Position#" name="positionNumber8"/><br>
-    <input type="text" placeholder="Player name" name="playerText"/>
-    <input type="text" placeholder="#" name="playerNumber"/>
-    <input type="text" placeholder="Position" name="positionText"/>
-    <input type="text" placeholder="Position#" name="positionNumber"/><br>
-    <input type="text" placeholder="Player name" name="playerText1"/>
-    <input type="text" placeholder="#" name="playerNumber1"/>
-    <input type="text" placeholder="Position" name="positionText1"/>
-    <input type="text" placeholder="Position#" name="positionNumber1"/><br>
-    <input type="text" placeholder="Player name" name="playerText2"/>
-    <input type="text" placeholder="#" name="playerNumber2"/>
-    <input type="text" placeholder="Position" name="positionText2"/>
-    <input type="text" placeholder="Position#" name="positionNumber2"/><br>
-    <input type="text" placeholder="Player name" name="playerText3"/>
-    <input type="text" placeholder="#" name="playerNumber3"/>
-    <input type="text" placeholder="Position" name="positionText3"/>
-    <input type="text" placeholder="Position#" name="positionNumber3"/><br>
-    <input type="text" placeholder="Player name" name="playerText4"/>
-    <input type="text" placeholder="#" name="playerNumber4"/>
-    <input type="text" placeholder="Position" name="positionText4"/>
-    <input type="text" placeholder="Position#" name="positionNumber4"/><br>
-    <input type="text" placeholder="Player name" name="playerText5"/>
-    <input type="text" placeholder="#" name="playerNumber5"/>
-    <input type="text" placeholder="Position" name="positionText5"/>
-    <input type="text" placeholder="Position#" name="positionNumber5"/><br>
-    <input type="text" placeholder="Player name" name="playerText6"/>
-    <input type="text" placeholder="#" name="playerNumber6"/>
-    <input type="text" placeholder="Position" name="positionText6"/>
-    <input type="text" placeholder="Position#" name="positionNumber6"/><br>
-    <input type="text" placeholder="Player name" name="playerText7"/>
-    <input type="text" placeholder="#" name="playerNumber7"/>
-    <input type="text" placeholder="Position" name="positionText7"/>
-    <input type="text" placeholder="Position#" name="positionNumber7"/><br>
-    <input type="text" placeholder="Player name" name="playerText8"/>
-    <input type="text" placeholder="#" name="playerNumber8"/>
-    <input type="text" placeholder="Position" name="positionText8"/>
-    <input type="text" placeholder="Position#" name="positionNumber8"/><br>
-    <button type="submit">Submit</button>
+                <div class="container">
+                    <h1>Away</h1>
+                    <hr>
+                    <form class="form-horizontal">
+                        <div class="form-group">
 
+    <input type="text" placeholder="Player name" name="playerText9"/>
+                <input type="text" placeholder="#" name="playerNumber9"/>
+    <input type="text" placeholder="Position" name="positionText9"/>
+    <input type="text" placeholder="Position#" name="positionNumber9"/><br>
+    <input type="text" placeholder="Player name" name="playerText10"/>
+    <input type="text" placeholder="#" name="playerNumber10"/>
+    <input type="text" placeholder="Position" name="positionText10"/>
+    <input type="text" placeholder="Position#" name="positionNumber10"/><br>
+    <input type="text" placeholder="Player name" name="playerText11"/>
+    <input type="text" placeholder="#" name="playerNumber11"/>
+    <input type="text" placeholder="Position" name="positionText11"/>
+    <input type="text" placeholder="Position#" name="positionNumber11"/><br>
+    <input type="text" placeholder="Player name" name="playerText12"/>
+    <input type="text" placeholder="#" name="playerNumber12"/>
+    <input type="text" placeholder="Position" name="positionText12"/>
+    <input type="text" placeholder="Position#" name="positionNumber12"/><br>
+    <input type="text" placeholder="Player name" name="playerText13"/>
+    <input type="text" placeholder="#" name="playerNumber13"/>
+    <input type="text" placeholder="Position" name="positionText13"/>
+    <input type="text" placeholder="Position#" name="positionNumber13"/><br>
+    <input type="text" placeholder="Player name" name="playerText14"/>
+    <input type="text" placeholder="#" name="playerNumber14"/>
+    <input type="text" placeholder="Position" name="positionText14"/>
+    <input type="text" placeholder="Position#" name="positionNumber14"/><br>
+    <input type="text" placeholder="Player name" name="playerText15"/>
+    <input type="text" placeholder="#" name="playerNumber15"/>
+    <input type="text" placeholder="Position" name="positionText15"/>
+    <input type="text" placeholder="Position#" name="positionNumber15"/><br>
+    <input type="text" placeholder="Player name" name="playerText16"/>
+    <input type="text" placeholder="#" name="playerNumber16"/>
+    <input type="text" placeholder="Position" name="positionText16"/>
+    <input type="text" placeholder="Position#" name="positionNumber16"/><br>
+    <input type="text" placeholder="Player name" name="playerText17"/>
+    <input type="text" placeholder="#" name="playerNumber17"/>
+    <input type="text" placeholder="Position" name="positionText17"/>
+    <input type="text" placeholder="Position#" name="positionNumber17"/><br>
+    <button type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </form>
+    </div>
 </form>
 
 {{#player}}

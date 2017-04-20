@@ -11,34 +11,30 @@
 
     <style>
         /* Remove the navbar's default margin-bottom and rounded borders */
-
         .navbar {
             margin-bottom: 50px;
             border-radius: 200px;
             background-image: url("images.jpeg");
             background-repeat: repeat-x;
-            background-color:lightgray;
+            background-color: darkgreen;
 
         }
+
+        /* Set black background color, white text and some padding */
+        footer {
+            background-color: #555;
+            color: white;
+            padding: 15px;
+        }
+
         div{
-            border-style: outset;
+
             font-family: "Times New Roman", Times, serif;
             border-spacing: 15px;
-
         }
 
-
-        img {
-            display: block;
-            margin: 0 auto;
-        }
-        body {
-
-            background-image: url("images.jpeg");
-
-
-        }
     </style>
+
 </head>
 <body>
 
@@ -50,60 +46,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Portfolio</a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Gallery</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>
         </div>
     </div>
 
 
-    <form action="/add-score" method="post">
-        <input type="text" placeholder="Away" name="scoreText"/>
-    <input type="text" placeholder="Home" name="scoresText"/>
-    <button type="submit">Save</button>
-</form>
-<form action="/save" method="post">
-    <button type="submit">Submit</button>
-</form>
-    <br><br>
-<form action="/add-outs" method="post">
-    <input type="text" placeholder="Enter Outs" name="outsText"/>
-    <button type="submit">Save</button>
-</form>
-<form action="/batter" method="post">
-    <button type="submit">Next Batter</button>
-</form>
-    <form action="/pitcher" method="post">
-        <input type="text" placeholder="Pitcher name" name="pitcherName"/>
-        <button type="submit">Submit</button>
-    </form>
 
-    <form action="/game-count" method="post">
-        <select name="countText">
-            <option value="balls">Balls</option>
-            <option value="strikes">Strikes</option>
-        </select>
-        <button type="submit">Save</button>
-</form>
-
-<form action="/add-user" method="post">
-    <input type="text" placeholder="Name" name="userName"/>
-    <input type="text" placeholder="Password" name="passWord"/>
-    <button type="submit">Submit</button>
-</form>
-    <br><br>
-    <div class="container-fluid bg-3 text-center">
 
         <div class="row">
+            <div class="jumbotron">
             <div class="col-sm-4">
                 <h3>Home</h3>
                 <div class="panel panel-default">
@@ -124,6 +74,7 @@
             <div class="col-sm-4">
                 <h3>Score</h3>
                 <div class="panel panel-default">
+
                     <div class="panel-body">
                         <p>Home {{scores.home}}</p>
                         <p>Away {{scores.away}}</p>
@@ -149,10 +100,7 @@
     </div>
     </div>
         </div>
-    <div id="canvasDiv"></div>
-    <script type="text/javascript"> $(document).ready(function() {
-        prepareCanvas();
-    });</script>
+
 
     <div class="container">
     <div class="row">
