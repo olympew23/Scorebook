@@ -5,28 +5,31 @@ package com.theironyard.novauc.entities;
  */
 public class Innings {
 
-    private String number;
+    private int number;
     private int outs;
     private int totalOuts;
     private boolean isEven;
+    private String top;
 
 
     public Innings() {
 
     }
 
-    public Innings(String number, int outs, int totalOuts) {
+    public Innings(int number, String top, int outs, int totalOuts) {
         this.number = number;
+        this.top = top;
         this.outs = outs;
         this.totalOuts = totalOuts;
-        this.isEven = isEven;
+
+
     }
 
-    public String getNumber() {
+    public int getNumber() {
         return number;
     }
 
-    public void setNumber(String number) {
+    public void setNumber(int number) {
         this.number = number;
     }
 
@@ -52,5 +55,13 @@ public class Innings {
 
     public void setEven(boolean even) {
         isEven = even;
+    }
+
+    public String getTop() {
+        return top;
+    }
+
+    public void setTop(String top) {
+        this.top = top;
     }
 }

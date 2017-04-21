@@ -5,15 +5,21 @@ package com.theironyard.novauc.entities;
  */
 public class Batter extends Player {
     String results;
+    Count batterCount;
 
 
     public Batter(){
 
     }
+    public Batter(String name) {
+        super(name);
+        this.batterCount = new Count(0,0);
+    }
 
-    public Batter(String name,  int number, String position,  int posNumber, String results) {
-        super(name,number, position,  posNumber);
-        this.results = results;
+
+    public Batter(String name, int number, String position, int posNumber) {
+        super(name, number, position, posNumber);
+        this.batterCount = new Count(0,0);
     }
 
     public String getResults() {
@@ -22,5 +28,13 @@ public class Batter extends Player {
 
     public void setResults(String results) {
         this.results = results;
+    }
+
+    public Count getBatterCount() {
+        return batterCount;
+    }
+
+    public void setBatterCount(Count batterCount) {
+        this.batterCount = batterCount;
     }
 }
