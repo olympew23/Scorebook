@@ -17,6 +17,9 @@ public class Player {
     public Player(){
 
     }
+    public Player(String name) {
+        this.name = name;
+    }
 
     public Player(String name,int number, String position,  int posNumber) {
         this.name = name;

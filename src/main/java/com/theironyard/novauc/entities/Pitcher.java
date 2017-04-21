@@ -10,10 +10,15 @@ public class Pitcher extends Player {
 public Pitcher(){
 
 }
+    public Pitcher(String name) {
+        super(name);
+        this.pitchCount = 0;
+    }
 
-    public Pitcher(String name, int number,  String position,  int posNumber, int pitchCount) {
+
+    public Pitcher(String name, int number,  String position,  int posNumber) {
         super(name, number,position,  posNumber);
-        this.pitchCount = pitchCount;
+        this.pitchCount = 0;
     }
 
     public int getPitchCount() {
