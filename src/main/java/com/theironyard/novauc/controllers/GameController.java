@@ -47,8 +47,7 @@ public class GameController {
         model.addAttribute("scoreKeeper",scoreKeeper);
         model.addAttribute("userName", users);
         model.addAttribute("currentBatter", currentBatter);
-
-        return "info";
+        return "home";
 
     }
 
@@ -65,16 +64,32 @@ public class GameController {
     }
 
 
-    @RequestMapping(path = "/batter", method = RequestMethod.GET)
-    public String addBatter(Model model, HttpSession session){
-        model.addAttribute("batter", batters);
-        return "love";
-    }
+//    @RequestMapping(path = "/batter", method = RequestMethod.GET)
+//    public String addBatter(Model model, HttpSession session){
+//        model.addAttribute("batter", batters);
+//        return "love";
+//    }
 
     @RequestMapping(path = "/", method = RequestMethod.GET)
     public String login(Model model, HttpSession session) {
         model.addAttribute("scoreKeeper",scoreKeeper);
         return "player";
+
+
+    }
+
+    @RequestMapping(path = "/info", method = RequestMethod.GET)
+    public String info(Model model) {
+        model.addAttribute("scores",scores);
+        model.addAttribute("innings", innings);
+        model.addAttribute("counts", currentBatter.getBatterCount());
+        model.addAttribute("pitcher",currentPitcher);
+        model.addAttribute("player",players);
+        model.addAttribute("playerList", playerList);
+        model.addAttribute("scoreKeeper",scoreKeeper);
+        model.addAttribute("userName", users);
+        model.addAttribute("currentBatter", currentBatter);
+        return "info";
 
 
     }
@@ -158,7 +173,7 @@ public class GameController {
         homePitcherList.add(homePitcher);
         currentBatter = players.get(0);
         currentPitcher = homePitcherList.get(0);
-        return "redirect:/home";
+        return "redirect:/info";
 
     }
 
@@ -169,7 +184,7 @@ public class GameController {
     public String addScore(Model model,   HttpSession session, int scoreText, int scoresText){
             scores.setAway(scores.getAway() + scoreText);
             scores.setHome(scores.getHome() + scoresText);
-            return "redirect:/home";
+            return "redirect:/info";
 
     }
 
@@ -249,7 +264,7 @@ public class GameController {
             innings.setNumber(9);
             innings.setTop("B");
         }
-        return "redirect:/home";
+        return "redirect:/info";
     }
 
 
@@ -271,7 +286,7 @@ public class GameController {
                 }
             }
         }
-        return "redirect:/home";
+        return "redirect:/info";
 
     }
 
@@ -284,7 +299,7 @@ public class GameController {
     @RequestMapping(path = "/add-user", method = RequestMethod.POST)
     public String addUser(Model model, HttpSession session, String userName, String passWord){
         model.addAttribute("userName",userName);
-        return "redirect:/";
+        return "redirect:/user";
     }
 
      @RequestMapping(path = "/save", method = RequestMethod.POST)
@@ -309,7 +324,7 @@ public class GameController {
          }
          br.close();
          outputFile.close();
-         return "redirect:/home";
+         return "redirect:/info";
      }
     @RequestMapping(path = "/batter", method = RequestMethod.POST)
     public String nextBatter() {
@@ -332,7 +347,7 @@ public class GameController {
         }
         currentBatter.getBatterCount().setBalls(0);
         currentBatter.getBatterCount().setStrike(0);
-        return "redirect:/home";
+        return "redirect:/info";
     }
 
     @RequestMapping(path = "/pitcher", method = RequestMethod.POST)
@@ -346,7 +361,7 @@ public class GameController {
             homePitcherList.add(changePitcher);
             homePitcherCounter++;
         }
-        return "redirect:/home";
+        return "redirect:/info";
     }
 
 

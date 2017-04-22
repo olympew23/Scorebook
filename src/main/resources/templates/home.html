@@ -12,32 +12,61 @@
     <style>
         /* Remove the navbar's default margin-bottom and rounded borders */
         .navbar {
-            margin-bottom: 50px;
-            border-radius: 200px;
+            margin-bottom: 10px;
+            border-radius: 50px;
             background-image: url("images.jpeg");
             background-repeat: repeat-x;
-            background-color: darkgreen;
+        }
+          td{ border-style: solid;
+              font-size: large;
+              font-style: italic;
+              font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
+
+          }
+
+
+
+        table {
+            border: 1px solid black;
+            width: 100%;
+        }
+        th{
+            height: 50px;
+        }
+        li{
+            border-style: solid;
+
 
         }
 
-        /* Set black background color, white text and some padding */
-        footer {
-            background-color: #555;
-            color: white;
-            padding: 15px;
-        }
+        /*.left-background {background-color:darkgreen; width:50%; height:100%; position:absolute; top:0; right: 50%;}*/
+        /*.right-background {background-color:sandybrown; width:50%; height:100%;position:absolute; top:0; left: 50%;}*/
 
         div{
 
             font-family: "Times New Roman", Times, serif;
             border-spacing: 15px;
+
+
+        }
+        #canvasDiv{
+            text-align: center;
+
+        }
+        body {
+            background: linear-gradient(to bottom, #336600 0%, #ff9900 100%);
         }
 
+    h1{
+        font-style: italic;
+
+    }  /*}*/
     </style>
 
 </head>
 <body>
-
+<div class="left-background"></div>
+<div class="right-background"></div>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -48,82 +77,79 @@
             </button>
         </div>
     </div>
-
-
-
-
-        <div class="row">
-            <div class="jumbotron">
-            <div class="col-sm-4">
-                <h3>Home</h3>
-                <div class="panel panel-default">
-
-                    <div class="panel-body">
-                        <ol>
+</nav>
+    <div class="row">
+    <div class="col-sm-4">
+        <h1>Home</h1>
+        <table>
+            <tr>
+                <td>Name
+                    <ol>
                         {{#player}}
-                        <li>{{name}} {{number}} {{position}} {{posNumber}} </li>
+                        <li>{{name}} {{number}}</li>
                         {{/player}}
                     </ol>
-                    </div>
+                </td>
+            </tr>
 
-            </div>
-
-
-            </div>
-
-            <div class="col-sm-4">
-                <h3>Score</h3>
-                <div class="panel panel-default">
-
-                    <div class="panel-body">
-                        <p>Home {{scores.home}}</p>
-                        <p>Away {{scores.away}}</p>
+        </table>
+    </div>
 
 
-            </div>
-                </div>
-            </div>
 
-            <div class="col-sm-4">
-                <h3>Away</h3>
+<div class="col-sm-4">
+    <div align="center">
+    <h1>Score</h1>
+    <p>Home {{scores.home}}</p>
+    <p>Away {{scores.away}}</p>
 
-                <div class="panel panel-default">
-                    <div class="panel-body">
+</div>
+</div>
+<div class="col-sm-4">
+    <h1>Away</h1>
+    <table>
+        <tr>
+            <td>Name
                 <ol>
                     {{#playerList}}
-                    <li>{{name}} {{number}} {{position}} {{posNumber}}</li>
+                    <li>{{name}}</li>
                     {{/playerList}}
                 </ol>
 
-            </div>
-        </div>
+            </td>
+        </tr>
+    </table>
+</div>
     </div>
-    </div>
-        </div>
+<div id="canvasDiv">
 
+</div>
 
-    <div class="container">
+<script type="text/javascript"> $(document).ready(function() {
+    prepareCanvas();
+});</script>
+<br><br>
+<div class="container">
     <div class="row">
         <div class="col-sm-4">
-            <h3>Pitch Count</h3>
+            <h1>Pitch Count</h1>
+            {{pitcher.name}}
             {{pitcher.pitchCount}}
         </div>
         <div class="col-sm-4">
-            <h3>Count</h3>
+            <h1>Count</h1>
             <p> Balls {{counts.balls}}</p>
-             <p> Strike {{counts.strike}}</p>
+            <p> Strike {{counts.strike}}</p>
         </div>
         <div class="col-sm-4">
-            <h3>Innings</h3>
+            <h1>Innings</h1>
             {{innings.outs}}
-            {{innings.number}}
+            {{innings.number}} {{innings.top}}
         </div>
 
     </div>
 </div>
 
-
-</nav>
 
 </body>
 

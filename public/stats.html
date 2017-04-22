@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Bootstrap Example</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -9,138 +10,150 @@
     <script type="text/javascript" src="app.js"></script>
 
     <style>
-        body {
-            background-image: url("BamBooBat-Youth-Little-League-Bamboo-Baseball-Bat-58c2e98f5f9b58af5ce464f3.jpg");
+        /* Remove the navbar's default margin-bottom and rounded borders */
+        .navbar {
+            margin-bottom: 10px;
+            border-radius: 50px;
+            background-image: url("images.jpeg");
+            background-repeat: repeat-x;
+
 
         }
-
-        h1{
-            position: relative;
-            right: 30px;
-            color: blue;
-            font-style: italic;
-            font-family: Arial, Helvetica, sans-serif;
+        table {
+            border: 1px solid black;
+            width: 100%;
+        }
+        th{
+            height: 50px;
         }
 
+        /*.left-background {background-color:darkgreen; width:50%; height:100%; position:absolute; top:0; right: 50%;}*/
+        /*.right-background {background-color:sandybrown; width:50%; height:100%;position:absolute; top:0; left: 50%;}*/
 
         div{
 
             font-family: "Times New Roman", Times, serif;
-
-
+            border-spacing: 15px;
+        }
+        body {
+            background: linear-gradient(to bottom, #336600 0%, #ff9900 100%);
         }
 
+    h1{
+        font-style: italic;
+
+    }  /*}*/
     </style>
-
-
-
 
 </head>
 <body>
+<div class="left-background"></div>
+<div class="right-background"></div>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+    </div>
+</nav>
+    <div class="row">
+    <div class="col-sm-4">
+        <h1>Home</h1>
+        <table>
+            <tr>
+                <td>Name
+                    <ol>
+                        <li>Mike 9</li>
+                        <li>9 9</li>
+                        <li>9 9</li>
+                        <li>9 9</li>
+                        <li>9 9</li>
+                        <li>9 9</li>
+                        <li>9 9</li>
+                        <li>9 9</li>
+                        <li>9 9</li>
+                    </ol>
+                </td>
+            </tr>
+
+        </table>
+    </div>
 
 
-<div class="container">
-    <form action="/add-score" method="post">
-        <form class="form-horizontal">
-            <div class="form-group">
-                <label class="control-label col-sm-2">Score:</label>
-                <div class="col-sm-10">
-        <input type="text" placeholder="Away" name="scoreText"/>
-        <input type="text" placeholder="Home" name="scoresText"/>
-        <button type="submit">Save</button>
-            </div>
-            </div>
 
-        </form>
-    </form>
+<div class="col-sm-4">
+    <div align="center">
+    <h1>Score</h1>
+    <p>Home 1</p>
+    <p>Away 2</p>
 
 </div>
-<div class="container">
-    <form action="/save" method="post">
-        <form class="form-horizontal">
-            <div class="form-group">
-                <label class="control-label col-sm-2">Save:</label>
-                <div class="col-sm-10">
-                    <button type="submit">Submit</button>
-                </div>
-            </div>
-
-        </form>
-    </form>
-
 </div>
+<div class="col-sm-4">
+    <h1>Away</h1>
+    <table>
+        <tr>
+            <td>Name
+                <ol>
+                    <li>John</li>
+                    <li>8</li>
+                    <li>8</li>
+                    <li>8</li>
+                    <li>8</li>
+                    <li>8</li>
+                    <li>8</li>
+                    <li>8</li>
+                    <li>8</li>
+                </ol>
 
-<div class="container">
-    <form action="/add-outs" method="post">
-        <form class="form-horizontal">
-            <div class="form-group">
-                <label class="control-label col-sm-2">Outs:</label>
-                <div class="col-sm-10">
-        <input type="text" placeholder="Enter Outs" name="outsText"/>
-        <button type="submit">Save</button>
-                </div>
-            </div>
-        </form>
-    </form>
-</div>
-
-<div class="container">
-<form action="/batter" method="post">
-<form class="form-horizontal">
-    <label class="control-label col-sm-2">Batter:</label>
-    <div class="form-group">
-        <div class="col-sm-10">
-            <button type="submit">Next Batter</button>
-
-
+            </td>
+        </tr>
+    </table>
 </div>
     </div>
-</form>
-</form>
-
-</div>
-
-
 
 <div class="container">
-    <form action="/pitcher" method="post">
-        <form class="form-horizontal">
-            <label class="control-label col-sm-2">Pitcher:</label>
-            <div class="form-group">
-                <div class="col-sm-10">
-                    <input type="text" placeholder="Pitcher name" name="pitcherName"/>
-                    <button type="submit">Submit</button>
+    <div class="row">
+        <div class="col-sm-4">
+            <h1>Pitch Count</h1>
+            Hot
+            2
+        </div>
+        <div class="col-sm-4">
+            <h1>Count</h1>
+            <p> Balls 0</p>
+            <p> Strike 0</p>
+        </div>
+        <div class="col-sm-4">
+            <h1>Innings</h1>
+            0
+            1 B
+        </div>
 
-
-                </div>
-            </div>
-        </form>
-    </form>
-
+    </div>
 </div>
 
-<div class="container">
-    <form action="/game-count" method="post">
-        <form class="form-horizontal">
-            <label class="control-label col-sm-2">Count:</label>
-            <div class="form-group">
-                <div class="col-sm-10">
-                    <select name="countText">
-                        <option value="balls">Balls</option>
-                        <option value="strikes">Strikes</option>
-                    </select>
-                    <button type="submit">Save</button>
-
-
-                </div>
-            </div>
-        </form>
-    </form>
-
+<div id="canvasDiv">
+    <div align="right"></div>
 </div>
-<div id="canvasDiv"></div>
+
 <script type="text/javascript"> $(document).ready(function() {
     prepareCanvas();
 });</script>
+
 </body>
+
+
+
+
+
+<footer class="container-fluid text-center">
+
+</footer>
+
+
 </html>
