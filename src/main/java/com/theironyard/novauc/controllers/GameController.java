@@ -327,7 +327,7 @@ public class GameController {
          return "redirect:/info";
      }
     @RequestMapping(path = "/batter", method = RequestMethod.POST)
-    public String nextBatter() {
+    public String nextBatter(String batterName) {
         if (innings.getTop().equals("T")) {
             currentPitcher = homePitcherList.get(homePitcherCounter);
             currentBatter = players.get(awayBattingOrder);
