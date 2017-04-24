@@ -14,11 +14,18 @@
         .navbar {
             margin-bottom: 10px;
             border-radius: 50px;
-            background-image: url("images.jpeg");
+            background-image: url("wp0b9d6bda.gif");
             background-repeat: repeat-x;
-
-
         }
+          td{ border-style: solid;
+              font-size: large;
+              font-style: italic;
+              font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
+
+          }
+
+
+
         table {
             border: 1px solid black;
             width: 100%;
@@ -26,19 +33,36 @@
         th{
             height: 50px;
         }
+        li{
+            border-style: solid;
 
-        /*.left-background {background-color:darkgreen; width:50%; height:100%; position:absolute; top:0; right: 50%;}*/
-        /*.right-background {background-color:sandybrown; width:50%; height:100%;position:absolute; top:0; left: 50%;}*/
+
+        }
+
+        div#b {
+            position: fixed;
+            top:40px;
+            left: 30px;
+            width: 40px;
+            height: 40px;
+            background: url(wpc1c444a8.gif)0,0 no-repeat;}
 
         div{
 
             font-family: "Times New Roman", Times, serif;
             border-spacing: 15px;
+
+
+        }
+        #canvasDiv{
+            text-align: center;
+
         }
         body {
             background: linear-gradient(to bottom, #336600 0%, #ff9900 100%);
-        }
 
+        }
+        #baseball{ position: absolute;left : -1000px }
     h1{
         font-style: italic;
 
@@ -47,6 +71,7 @@
 
 </head>
 <body>
+<img id="baseball" src="wpc1c444a8.gif" />
 <div class="left-background"></div>
 <div class="right-background"></div>
 <nav class="navbar navbar-inverse">
@@ -67,15 +92,15 @@
             <tr>
                 <td>Name
                     <ol>
-                        <li>Mike 9</li>
-                        <li>9 9</li>
-                        <li>9 9</li>
-                        <li>9 9</li>
-                        <li>9 9</li>
-                        <li>9 9</li>
-                        <li>9 9</li>
-                        <li>9 9</li>
-                        <li>9 9</li>
+                        <li>8 8</li>
+                        <li>8 8</li>
+                        <li>8 8</li>
+                        <li>8 8</li>
+                        <li>8 8</li>
+                        <li>88 8</li>
+                        <li>88 8</li>
+                        <li>8 8</li>
+                        <li>8 8</li>
                     </ol>
                 </td>
             </tr>
@@ -99,15 +124,15 @@
         <tr>
             <td>Name
                 <ol>
-                    <li>John</li>
-                    <li>8</li>
-                    <li>8</li>
-                    <li>8</li>
-                    <li>8</li>
-                    <li>8</li>
-                    <li>8</li>
-                    <li>8</li>
-                    <li>8</li>
+                    <li>9</li>
+                    <li>9</li>
+                    <li>9</li>
+                    <li></li>
+                    <li>9</li>
+                    <li>9</li>
+                    <li>99</li>
+                    <li>99</li>
+                    <li>9</li>
                 </ol>
 
             </td>
@@ -115,12 +140,48 @@
     </table>
 </div>
     </div>
+<div id="canvasDiv">
 
+</div>
+<script>
+    $(function() {
+        var img = $("#baseball"),
+            width = img.get(0).width,
+            screenWidth = $(window).width(),
+            duration = 5000;
+
+        function animateBaseball() {
+            img.css("left", -width).animate({
+                "left": screenWidth
+            }, duration, animateBaseball);
+        }
+
+        animateBaseball();
+    });</script>
+
+<script>
+    var b = function($b,speed){
+        ballsWidth = $b.width();
+
+        $b.animate({
+            "left": "100%"
+        }, speed);
+    };
+
+    $(function(){
+        b($("#b"), 5000);
+    });
+</script>
+
+<script type="text/javascript"> $(document).ready(function() {
+    prepareCanvas();
+});</script>
+<br><br>
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
             <h1>Pitch Count</h1>
-            Hot
+            9
             2
         </div>
         <div class="col-sm-4">
@@ -130,20 +191,13 @@
         </div>
         <div class="col-sm-4">
             <h1>Innings</h1>
-            0
+            1
             1 B
         </div>
 
     </div>
 </div>
 
-<div id="canvasDiv">
-    <div align="right"></div>
-</div>
-
-<script type="text/javascript"> $(document).ready(function() {
-    prepareCanvas();
-});</script>
 
 </body>
 

@@ -17,24 +17,30 @@
             background-image: url("wp0b9d6bda.gif");
             background-repeat: repeat-x;
         }
-          td{ border-style: solid;
-              font-size: large;
+          td{ padding: 8px;
+              text-align: left;
+              border-bottom: 1px solid #ddd;
               font-style: italic;
-              font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
 
           }
 
+            p{
 
+            }
 
         table {
-            border: 1px solid black;
+            border:  solid;
+            width: 100%;
+
+            
+        }
+        td{
+            height: 50px;
             width: 100%;
         }
-        th{
-            height: 50px;
-        }
         li{
-            border-style: solid;
+            border-style: double;
+            border-collapse: separate;
 
 
         }
@@ -62,16 +68,28 @@
             background: linear-gradient(to bottom, #336600 0%, #ff9900 100%);
 
         }
-        #baseball{ position: absolute;right : -1000px }
+        #baseball{ position: absolute;left : -1000px }
     h1{
         font-style: italic;
+        text-align: center;
+        border-bottom: solid;
+        border: solid;
+
 
     }  /*}*/
+
+    h2{
+        font-style: italic;
+        border-bottom: solid;
+        text-align: center;
+        border: solid;
+       
+    }
     </style>
 
 </head>
 <body>
-<img id="baseball" src="wpc1c444a8.gif" />
+
 <div class="left-background"></div>
 <div class="right-background"></div>
 <nav class="navbar navbar-inverse">
@@ -85,7 +103,9 @@
         </div>
     </div>
 </nav>
-    <div class="row">
+<img id="baseball" src="Baseball-Ball-Fire-87287.gif" />
+
+<div class="row">
     <div class="col-sm-4">
         <h1>Home</h1>
         <table>
@@ -93,7 +113,7 @@
                 <td>Name
                     <ol>
                         {{#player}}
-                        <li>{{name}} {{number}}</li>
+                        <li>{{name}}</li>
                         {{/player}}
                     </ol>
                 </td>
@@ -139,8 +159,8 @@
             duration = 5000;
 
         function animateBaseball() {
-            img.css("right", -width).animate({
-                "right": screenWidth
+            img.css("left", -width).animate({
+                "left": screenWidth
             }, duration, animateBaseball);
         }
 
@@ -152,7 +172,7 @@
         ballsWidth = $b.width();
 
         $b.animate({
-            "right": "100%"
+            "left": "100%"
         }, speed);
     };
 
@@ -168,17 +188,18 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
-            <h1>Pitch Count</h1>
-            {{pitcher.name}}
-            {{pitcher.pitchCount}}
+            <h2>Pitch Count</h2>
+            <p> Name:{{pitcher.name}}  {{pitcher.pitchCount}}</p>
+
         </div>
         <div class="col-sm-4">
-            <h1>Count</h1>
+            <h2>Count</h2>
             <p> Balls {{counts.balls}}</p>
             <p> Strike {{counts.strike}}</p>
+
         </div>
         <div class="col-sm-4">
-            <h1>Innings</h1>
+            <h2>Innings</h2>
             {{innings.outs}}
             {{innings.number}} {{innings.top}}
         </div>
