@@ -8,118 +8,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="scorebook.css">
 
-
-    <style>
-        /* Remove the navbar's default margin-bottom and rounded borders */
-        .navbar {
-            margin-bottom: 10px;
-            border-radius: 50px;
-            background-image: url("wp0b9d6bda.gif");
-            background-repeat: repeat-x;
-            border-image-width: 50%;
-        }
-          /*td{ padding: 8px;*/
-              /*text-align: left;*/
-              /*border-bottom: 1px solid #ddd;*/
-              /*font-style: italic;*/
-
-          /*}*/
-
-            th{ color: white;
-                font-size: x-large;
-                border-color: white;
-                font-style: italic;
-                text-align: match-parent;
-                font-family: "Times New Roman", Times, serif;
-
-            }
-
-
-            p{
-                font-size: x-large;
-                font-style: italic;
-                font-family: "Times New Roman", Times, serif;
-            }
-        table {
-            border:  thin;
-            width: 100%;
-           color: whitesmoke;
-
-            
-        }
-        td{
-            height: 50px;
-            width: 100%;
-            border: thin;
-
-            color: whitesmoke;
-        }
-        li{
-
-            color: black;
-        }
-
-        div#b {
-            position: fixed;
-            top:40px;
-            left: 30px;
-            width: 40px;
-            height: 40px;
-            background: url(wpc1c444a8.gif)0,0 no-repeat;}
-
-        div{
-
-            font-family: "Times New Roman", Times, serif;
-            border-spacing: 15px;
-
-
-        }
-        #canvasDiv{
-            text-align: center;
-
-        }
-        body {
-            background: linear-gradient(to bottom, #336600 0%, #ff9900 100%);
-            padding: 0%;
-            margin: 0%;
-
-        }
-        #baseball{ position: absolute;left : -1000px;height: 60%;word-spacing: 8px;
-        }   
-
-        #fire{ position: absolute;left: -2000px;
-
-        }
-
-
-
-        h1{
-        font-style: italic;
-        text-align: center;
-        border-bottom: solid;
-        border: solid;
-        color: white;
-
-
-    }  /*}*/
-
-    h2{
-        font-style: italic;
-        border-bottom: solid;
-        text-align: center;
-        border: solid;
-        color: whitesmoke;
-
-    }
-    </style>
+<style>
+    #animate { position: absolute; ;  width: 500px; height: 100px;}
+</style>
 
 </head>
 
 <body>
 
-<div class="left-background"></div>
-<div class="right-background"></div>
+
+
 
 
 <nav class="navbar navbar-inverse">
@@ -135,7 +35,10 @@
     </div>
 </nav>
 
+<div id="animate">Welcome Parents!</div>
+<script type="text/javascript"> $(document).ready(function() {
 
+});</script>
 <div class="row">
     <div class="col-sm-4">
         <h1>Home</h1>
@@ -147,22 +50,24 @@
                 <td>
                     <ol>
                         {{#player}}
-                        <li>{{name}}</li>
+                        <li>{{name}} {{result.hit}} {{result.atBat}}</li>
                         {{/player}}
                     </ol>
                 </td>
             </tr>
 
         </table>
+
     </div>
+
 
 
 
 <div class="col-sm-4">
     <div align="center">
     <h1>Score</h1>
-    <p>Home {{scores.home}}</p>
-    <p>Away {{scores.away}}</p>
+    <p>Home: {{scores.home}}</p>
+    <p>Away: {{scores.away}}</p>
 
 </div>
 </div>
@@ -175,78 +80,55 @@
             <td>
                 <ol>
                     {{#playerList}}
-                    <li>{{name}}</li>
+                    <li>{{name}} {{result.hit}} {{result.atBat}}</li>
                     {{/playerList}}
                 </ol>
 
             </td>
         </tr>
     </table>
+
 </div>
 </div>
+
+<!--<div class="col-sm-4">-->
+
+    <!--<h1>Pitchers</h1>-->
+    <!--<table>-->
+        <!--<tr>-->
+        <!--{{#homePitcherList}}-->
+            <!--<ol>-->
+               <!--<li>{{pitcher.name}} {{pitcher.count}}</li>-->
+                <!--{{/homePitcherList}}-->
+            <!--</ol>-->
+
+        <!--</tr>-->
+        <!--<td>-->
+
+        <!--</td>-->
+    <!--</table>-->
+    <!--<div class="col-sm-4">-->
+        <!--<table>-->
+            <!--<tr>-->
+                <!--{{#awayPitcherList}}-->
+                <!--<ol>-->
+                    <!--<li>{{pitcher.name}} {{pitcher.count}}</li>-->
+                    <!--{{/awayPitcherList}}-->
+                <!--</ol>-->
+            <!--</tr>-->
+        <!--</table>-->
+    <!--</div>-->
+
+
 <img id="fire" src="Baseball-Ball-Fire-87287.gif"/>
-<br><br>
+
 <img id="baseball"  src="baseball_text_bat_ball_display_hg_clr.gif" />
 
 
 
-
-
-
-<script>
-    $(function() {
-        var img = $("#baseball"),
-            width = img.get(0).width,
-            screenWidth = $(window).width(),
-            duration = 5500;
-
-        function animateBaseball() {
-            img.css("left", -width).animate({
-                "left": screenWidth
-            }, duration, animateBaseball);
-        }
-
-        animateBaseball();
-    });</script>
-
-
-
-    <script>
-    $(function() {
-        var img = $("#fire"),
-            width = img.get(0).width,
-            screenWidth = $(window).width(),
-            duration = 5000;
-
-        function animateFire() {
-            img.css("left", -width).animate({
-                "left": screenWidth
-            }, duration, animateFire);
-        }
-
-        animateFire();
-    });</script>
-
-<script>
-    var b = function($b,speed){
-        ballsWidth = $b.width();
-
-        $b.animate({
-            "left": "100%"
-        }, speed);
-    };
-
-    $(function(){
-        b($("#b"), 5000);
-    });
-
-
-
-</script>
-<br><br>
 <div id="canvasDiv">
-</div>
-
+</div><br><br>
+<p id="p01">Current Batter: {{currentBatter.name}}</p>
 <script type="text/javascript"> $(document).ready(function() {
     prepareCanvas();
 });</script>
@@ -255,23 +137,26 @@
     <div class="row">
         <div class="col-sm-4">
             <h2>Pitch Count</h2>
-            <p> Name:{{pitcher.name}}  {{pitcher.pitchCount}}</p>
+            <p> Name:{{pitcher.name}} {{pitcher.pitchCount}}</p>
 
         </div>
         <div class="col-sm-4">
             <h2>Count</h2>
-            <p> Balls {{counts.balls}}</p>
-            <p> Strike {{counts.strike}}</p>
+            <p> Balls: {{counts.balls}}</p>
+            <p> Strike: {{counts.strike}}</p>
 
         </div>
         <div class="col-sm-4">
             <h2>Innings</h2>
             <p> Outs: {{innings.outs}}</p>
             <p> Innings: {{innings.number}} {{innings.top}}</p>
+            <p>Current Batter: {{currentBatter.name}}</p>
         </div>
 
     </div>
 </div>
+
+
 
 
 </body>

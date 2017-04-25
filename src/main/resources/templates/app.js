@@ -183,4 +183,61 @@ function redraw(){
 }
 
 
+$(document).ready(function(e) {
+    var width = "+=" + $(document).width();
+    screenWidth =
+        $("#animate").animate({
+            left: width
+        }, 5000, function() {
+            $("#animate").css("display", "none");
+        });
+});
+$(function() {
+    var img = $("#baseball"),
+        width = img.get(0).width,
+        screenWidth = $(window).width(),
+        duration = 5500;
+
+    function animateBaseball() {
+       img.css("display","none").animate({
+            "left": screenWidth
+        }, duration, animateBaseball);
+    }
+
+    animateBaseball();
+
+});
+
+
+
+$(function() {
+    var img = $("#fire"),
+        width = img.get(0).width,
+        screenWidth = $(window).width(),
+        duration = 5000;
+
+    function animateFire() {
+        img.css("display","none").animate({
+            "left": screenWidth
+        }, duration, animateFire);
+    }
+
+    animateFire();
+});
+
+//     var b = function ($b, speed) {
+//         ballsWidth = $b.width();
+//
+//         $b.animate({
+//             "left": "100%"
+//         }, speed);
+//     };
+//
+//     $(function () {
+//         b($("#b"), 5000);
+//     });
+
+
+
+
 

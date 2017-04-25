@@ -59,30 +59,26 @@ div {
     font-family: "Times New Roman", Times, serif;
     border-spacing: 15px;
 
-
-
 }
-#canvasDiv {
+#canvasDiv{
     text-align: center;
-}
-#p01{ float: right;
 
 }
-
 body {
     background: linear-gradient(to bottom, #336600 0%, #ff9900 100%);
-
-
-}
-#baseball{ position: relative ;
-}
-
-#fire{ position: relative;
+    padding: 0%;
+    margin: 0%;
 
 }
+#baseball{ position: absolute;left: -1000px;
+}
+
+#fire{ position: absolute;left: -1000px;
+
+}
 
 
-#animate { position: absolute; ;  width: 500px; height: 100px; font-size: xx-large}
+
 h1{
     font-style: italic;
     text-align: center;
@@ -101,11 +97,6 @@ h2{
     color: whitesmoke;
 
 }
-
-
-
-
-
 
 
 
