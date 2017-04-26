@@ -188,7 +188,7 @@ function updateCanvasValueAndSubmit() {
 
 function redraw(){
     context.clearRect(0, 0, context.canvas.width, context.canvas.height); // Clears the canvas
-    context.strokeStyle = "#df4b26";
+    context.strokeStyle = "#00008B";
     context.lineJoin = "round";
     context.lineWidth = 5;
 

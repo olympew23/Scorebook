@@ -43,7 +43,7 @@ td{
 }
 li{
 
-    color: black;
+    color: whitesmoke;
 }
 
 div#b {
@@ -62,13 +62,13 @@ div {
 
 
 }
-#canvas{
+#canvasDiv1{
     text-align: center;
 }
 #canvasDiv {
     text-align: center;
 }
-#p01{ float: right;
+p{ color: whitesmoke;
 
 }
 
@@ -94,7 +94,7 @@ h1{
     text-align: center;
     border-bottom: solid;
     border: solid;
-    color: white;
+    color: whitesmoke;
 
 
 }  /*}*/
@@ -106,6 +106,7 @@ h2{
     text-align: center;
     border: solid;
     color: whitesmoke;
+
 
 }
 
