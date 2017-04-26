@@ -46,8 +46,9 @@ sizeHotspotWidthObject.huge = 39;
 sizeHotspotWidthObject.large = 25;
 sizeHotspotWidthObject.normal = 18;
 sizeHotspotWidthObject.small = 16;
-var totalLoadResources = 1;
+var totalLoadResources = 3;
 var curLoadResNum = 0;
+//var url = canvas.toDataUrl('image/png');
 /**
  * Calls the redraw function after all neccessary resources are loaded.
  */
@@ -69,7 +70,9 @@ function prepareCanvas()
     canvas.setAttribute('width', canvasWidth);
     canvas.setAttribute('height', canvasHeight);
     canvas.setAttribute('id', 'canvas');
+    canvas.setAttribute('onchange','updateCanvasValue();')
     canvasDiv.appendChild(canvas);
+
     if(typeof G_vmlCanvasManager != 'undefined') {
         canvas = G_vmlCanvasManager.initElement(canvas);
     }
@@ -83,6 +86,14 @@ function prepareCanvas()
     outlineImage.onload = function() { resourceLoaded();
     };
     outlineImage.src = "download.svg";
+
+    eraserImage.onload = function() { resourceLoaded();
+    };
+    eraserImage.src = "eraser-outline.png";
+
+    eraserBackgroundImage.onload = function() { resourceLoaded();
+    };
+    eraserBackgroundImage.src = "eraser-background.png";
 
     // THIS needs to be an SVG (Extension does not matter, just the fact that it is an SVG
 
@@ -126,6 +137,10 @@ function prepareCanvas()
     var clickY = new Array();
     var clickDrag = new Array();
     var paint;
+
+
+
+
 }
 //function addClick(x, y, dragging)
 //{
@@ -148,13 +163,32 @@ function clearCanvas()
     context.clearRect(0, 0, canvasWidth, canvasHeight);
 }
 
+
+
+function updateCanvasValueAndSubmit() {
+    alert('updatedCanvasValue defined');
+    elem = document.getElementById("canvas");
+
+    document.getElementById("updatedCanvas").value = elem.toDataURL();
+
+    console.log(elem.toDataURL());
+
+    document.forms["saveCanvasForm"].submit();
+
+    return true;
+
+}
+
+
+
+
 // redraw
 //redraw()
 
 
 function redraw(){
     context.clearRect(0, 0, context.canvas.width, context.canvas.height); // Clears the canvas
-    context.strokeStyle = "#2827df";
+    context.strokeStyle = "#df4b26";
     context.lineJoin = "round";
     context.lineWidth = 5;
 
@@ -174,6 +208,15 @@ function redraw(){
         context.stroke();
     }
 
+    if(curTool == "eraser")
+    {
+        context.drawImage(eraserBackgroundImage, 0, 0, canvasWidth, canvasHeight);
+        context.drawImage(eraserImage, 18, 19, mediumImageWidth, mediumImageHeight);
+    }
+    if(clickTool[i] == "eraser"){
+        //context.globalCompositeOperation = "destination-out"; // To erase instead of draw over with white
+        context.strokeStyle = 'white';
+    }
     context.save();
     context.beginPath();
     context.rect(drawingAreaX, drawingAreaY, drawingAreaWidth, drawingAreaHeight);
@@ -182,11 +225,10 @@ function redraw(){
     context.drawImage(outlineImage, drawingAreaX, drawingAreaY, drawingAreaWidth, drawingAreaHeight);
 }
 
+$(function() {
+    var width = "+=" + $(window).width();
 
-$(document).ready(function(e) {
-    var width = "+=" + $(document).width();
-    screenWidth =
-        $("#animate").animate({
+    $("#animate").animate({
             left: width
         }, 5000, function() {
             $("#animate").css("display", "none");
@@ -194,12 +236,12 @@ $(document).ready(function(e) {
 });
 $(function() {
     var img = $("#baseball"),
-        width = img.get(0).width,
+        width = img.width,
         screenWidth = $(window).width(),
         duration = 5500;
 
     function animateBaseball() {
-       img.css("display","none").animate({
+       img.css().animate({
             "left": screenWidth
         }, duration, animateBaseball);
     }
@@ -217,7 +259,7 @@ $(function() {
         duration = 5000;
 
     function animateFire() {
-        img.css("display","none").animate({
+        img.css().animate({
             "left": screenWidth
         }, duration, animateFire);
     }

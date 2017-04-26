@@ -5,21 +5,11 @@ import javax.persistence.*;
 /**
  * Created by jerieshasmith on 4/24/17.
  */
-@Entity
-@Table(name= "results")
+
 public class Result {
-    @Id
-    @GeneratedValue
-    int id;
-
-    @Column
-    int hit;
-
-    @Column
-    int atBat;
-
-    @Column
-    String outcome;
+    private int hit;
+    private int atBat;
+    private String outcome;
 
     public Result() {
     }

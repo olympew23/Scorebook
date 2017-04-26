@@ -10,7 +10,8 @@
 
     <style>
         body {
-            background-image: url("BamBooBat-Youth-Little-League-Bamboo-Baseball-Bat-58c2e98f5f9b58af5ce464f3.jpg");
+            background-image: url("baseball-155990_1280.png");
+            background-repeat: round;
 
         }
 
@@ -57,49 +58,6 @@
     </form>
 
 </div>
-<div class="container">
-    <form action="/save" method="post">
-        <form class="form-horizontal">
-            <div class="form-group">
-                <label class="control-label col-sm-2">Save:</label>
-                <div class="col-sm-10">
-                    <button type="submit">Submit</button>
-                </div>
-            </div>
-
-        </form>
-    </form>
-
-</div>
-
-<div class="container">
-    <form action="/add-outs" method="post">
-        <form class="form-horizontal">
-            <div class="form-group">
-                <label class="control-label col-sm-2">Outs:</label>
-                <div class="col-sm-10">
-        <input type="text" placeholder="Enter Outs" name="outsText"/>
-        <button type="submit">Save</button>
-                </div>
-            </div>
-        </form>
-    </form>
-</div>
-
-<div class="container">
-<form action="/batter" method="post">
-    <select name="result">
-        <option value="Single">Single</option>
-        <option value="Double">Double</option>
-        <option value="Triple">Triple</option>
-        <option value="Home Run">Home Run</option>
-        <option value="Out">Out</option>
-    </select>
-    <button type="submit">Next Batter</button>
-</form>
-
-
-</div>
 
 
 
@@ -142,9 +100,24 @@
 
 </div>
 
-
+<div class="container">
+    <form action="/batter" method="post" id="saveCanvasForm">
+        <select name="result">
+            <option value="Single">Single</option>
+            <option value="Double">Double</option>
+            <option value="Triple">Triple</option>
+            <option value="Home Run">Home Run</option>
+            <option value="Out">Out</option>
+            <option value="DP">Double Play</option>
+            <option value="TP">Triple Play</option>
+        </select>
+        <input type="hidden" name="updatedCanvas" id="updatedCanvas" value="">
+        <button type="button" onclick="updateCanvasValueAndSubmit();"> Next Batter</button>
+    </form>
+</div>
 
 <div id="canvasDiv"></div>
+
 <script type="text/javascript"> $(document).ready(function() {
     prepareCanvas();
 });</script>

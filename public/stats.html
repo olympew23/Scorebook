@@ -8,75 +8,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
-
-    <style>
-        /* Remove the navbar's default margin-bottom and rounded borders */
-        .navbar {
-            margin-bottom: 10px;
-            border-radius: 50px;
-            background-image: url("wp0b9d6bda.gif");
-            background-repeat: repeat-x;
-        }
-          td{ border-style: solid;
-              font-size: large;
-              font-style: italic;
-              font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
-
-          }
+    <link rel="stylesheet" type="text/css" href="scorebook.css">
 
 
-
-        table {
-            border: 1px solid black;
-            width: 100%;
-        }
-        th{
-            height: 50px;
-        }
-        li{
-            border-style: solid;
-
-
-        }
-
-        div#b {
-            position: fixed;
-            top:40px;
-            left: 30px;
-            width: 40px;
-            height: 40px;
-            background: url(wpc1c444a8.gif)0,0 no-repeat;}
-
-        div{
-
-            font-family: "Times New Roman", Times, serif;
-            border-spacing: 15px;
-
-
-        }
-        #canvasDiv{
-            text-align: center;
-
-        }
-        body {
-            background: linear-gradient(to bottom, #336600 0%, #ff9900 100%);
-
-        }
-        #baseball{ position: absolute;left : -1000px }
-    h1{
-        font-style: italic;
-
-    }  /*}*/
-    </style>
 
 </head>
+
 <body>
-<img id="baseball" src="wpc1c444a8.gif" />
-<div class="left-background"></div>
-<div class="right-background"></div>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
+
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -85,27 +27,34 @@
         </div>
     </div>
 </nav>
-    <div class="row">
+
+
+
+<div class="row">
     <div class="col-sm-4">
-        <h1>Home</h1>
+        <h1>Away</h1>
         <table>
             <tr>
-                <td>Name
+                <th colspan="6">Roster:</th>
+            </tr>
+
+                <td>
                     <ol>
-                        <li>8 8</li>
-                        <li>8 8</li>
-                        <li>8 8</li>
-                        <li>8 8</li>
-                        <li>8 8</li>
-                        <li>88 8</li>
-                        <li>88 8</li>
-                        <li>8 8</li>
-                        <li>8 8</li>
+                        <li>8 | 1 |1</li>
+                        <li>8 | 0 |0</li>
+                        <li>8 | 0 |0</li>
+                        <li>8 | 0 |0</li>
+                        <li>8 | 0 |0</li>
+                        <li>8 | 0 |0</li>
+                        <li>8 | 0 |0</li>
+                        <li>8 | 0 |0</li>
+                        <li>8 | 0 |0</li>
                     </ol>
                 </td>
             </tr>
 
         </table>
+
     </div>
 
 
@@ -113,90 +62,71 @@
 <div class="col-sm-4">
     <div align="center">
     <h1>Score</h1>
-    <p>Home 1</p>
-    <p>Away 2</p>
+    <p>Home: 5</p>
+    <p>Away: 4</p>
 
 </div>
 </div>
 <div class="col-sm-4">
-    <h1>Away</h1>
+    <h1>Home</h1>
     <table>
         <tr>
-            <td>Name
+            <th colspan="6">Roster:</th>
+        </tr>
+            <td>
                 <ol>
-                    <li>9</li>
-                    <li>9</li>
-                    <li>9</li>
-                    <li></li>
-                    <li>9</li>
-                    <li>9</li>
-                    <li>99</li>
-                    <li>99</li>
-                    <li>9</li>
+                    <li>8 | 0 | 0</li>
+                    <li>8 | 0 | 0</li>
+                    <li>8 | 0 | 0</li>
+                    <li>8 | 0 | 0</li>
+                    <li>88 | 0 | 0</li>
+                    <li>8 | 0 | 0</li>
+                    <li>8 | 0 | 0</li>
+                    <li>8 | 0 | 0</li>
+                    <li>8 | 0 | 0</li>
                 </ol>
 
             </td>
-        </tr>
+
     </table>
-</div>
-    </div>
-<div id="canvasDiv">
 
 </div>
-<script>
-    $(function() {
-        var img = $("#baseball"),
-            width = img.get(0).width,
-            screenWidth = $(window).width(),
-            duration = 5000;
-
-        function animateBaseball() {
-            img.css("left", -width).animate({
-                "left": screenWidth
-            }, duration, animateBaseball);
-        }
-
-        animateBaseball();
-    });</script>
-
-<script>
-    var b = function($b,speed){
-        ballsWidth = $b.width();
-
-        $b.animate({
-            "left": "100%"
-        }, speed);
-    };
-
-    $(function(){
-        b($("#b"), 5000);
-    });
-</script>
+</div>
+<div id="canvasDiv"></div>
+<!--<img src="canvas.png">-->
 
 <script type="text/javascript"> $(document).ready(function() {
     prepareCanvas();
 });</script>
-<br><br>
+
+<p>Current Batter: 8</p>
+
+
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
-            <h1>Pitch Count</h1>
-            9
-            2
+            <h2>Pitch Count</h2>
+            <p> Name:Joe 0</p>
+
+        </div>
+
+        <div class="col-sm-4">
+            <h2>Count</h2>
+            <p> Balls: 0</p>
+            <p> Strike: 0</p>
+
         </div>
         <div class="col-sm-4">
-            <h1>Count</h1>
-            <p> Balls 0</p>
-            <p> Strike 0</p>
-        </div>
-        <div class="col-sm-4">
-            <h1>Innings</h1>
-            1
-            1 B
+            <h2>Innings</h2>
+            <p> Outs: 0</p>
+            <p> Innings: 1 T</p>
+            <p>Current Batter: 8</p>
         </div>
 
     </div>
+
 </div>
+
 
 
 </body>

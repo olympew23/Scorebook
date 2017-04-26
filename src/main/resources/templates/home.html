@@ -10,18 +10,11 @@
     <script type="text/javascript" src="app.js"></script>
     <link rel="stylesheet" type="text/css" href="scorebook.css">
 
-<style>
-    #animate { position: absolute; ;  width: 500px; height: 100px;}
-</style>
+
 
 </head>
 
 <body>
-
-
-
-
-
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -35,13 +28,11 @@
     </div>
 </nav>
 
-<div id="animate">Welcome Parents!</div>
-<script type="text/javascript"> $(document).ready(function() {
 
-});</script>
+
 <div class="row">
     <div class="col-sm-4">
-        <h1>Home</h1>
+        <h1>Away</h1>
         <table>
             <tr>
                 <th colspan="6">Roster:</th>
@@ -50,7 +41,7 @@
                 <td>
                     <ol>
                         {{#player}}
-                        <li>{{name}} {{result.hit}} {{result.atBat}}</li>
+                        <li>{{name}} | {{result.hit}} |{{result.atBat}}</li>
                         {{/player}}
                     </ol>
                 </td>
@@ -59,7 +50,6 @@
         </table>
 
     </div>
-
 
 
 
@@ -72,7 +62,7 @@
 </div>
 </div>
 <div class="col-sm-4">
-    <h1>Away</h1>
+    <h1>Home</h1>
     <table>
         <tr>
             <th colspan="6">Roster:</th>
@@ -80,58 +70,25 @@
             <td>
                 <ol>
                     {{#playerList}}
-                    <li>{{name}} {{result.hit}} {{result.atBat}}</li>
+                    <li>{{name}} | {{result.hit}} | {{result.atBat}}</li>
                     {{/playerList}}
                 </ol>
 
             </td>
-        </tr>
+
     </table>
 
 </div>
 </div>
+<div id="canvasDiv"></div>
+<!--<img src="canvas.png">-->
 
-<!--<div class="col-sm-4">-->
-
-    <!--<h1>Pitchers</h1>-->
-    <!--<table>-->
-        <!--<tr>-->
-        <!--{{#homePitcherList}}-->
-            <!--<ol>-->
-               <!--<li>{{pitcher.name}} {{pitcher.count}}</li>-->
-                <!--{{/homePitcherList}}-->
-            <!--</ol>-->
-
-        <!--</tr>-->
-        <!--<td>-->
-
-        <!--</td>-->
-    <!--</table>-->
-    <!--<div class="col-sm-4">-->
-        <!--<table>-->
-            <!--<tr>-->
-                <!--{{#awayPitcherList}}-->
-                <!--<ol>-->
-                    <!--<li>{{pitcher.name}} {{pitcher.count}}</li>-->
-                    <!--{{/awayPitcherList}}-->
-                <!--</ol>-->
-            <!--</tr>-->
-        <!--</table>-->
-    <!--</div>-->
-
-
-<img id="fire" src="Baseball-Ball-Fire-87287.gif"/>
-
-<img id="baseball"  src="baseball_text_bat_ball_display_hg_clr.gif" />
-
-
-
-<div id="canvasDiv">
-</div><br><br>
-<p id="p01">Current Batter: {{currentBatter.name}}</p>
 <script type="text/javascript"> $(document).ready(function() {
     prepareCanvas();
 });</script>
+
+<p>Current Batter: {{currentBatter.name}}</p>
+
 
 <div class="container">
     <div class="row">
@@ -140,6 +97,7 @@
             <p> Name:{{pitcher.name}} {{pitcher.pitchCount}}</p>
 
         </div>
+
         <div class="col-sm-4">
             <h2>Count</h2>
             <p> Balls: {{counts.balls}}</p>
@@ -154,8 +112,8 @@
         </div>
 
     </div>
-</div>
 
+</div>
 
 
 

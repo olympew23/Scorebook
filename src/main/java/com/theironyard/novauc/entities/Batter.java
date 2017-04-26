@@ -5,20 +5,11 @@ import javax.persistence.*;
 /**
  * Created by jerieshasmith on 4/11/17.
  */
-@Entity
-@Table(name= "batters")
+
 public class Batter extends Player {
-    @Id
-    @GeneratedValue
-    int id;
+    private Count batterCount;
+    private  Result result;
 
-    @ManyToOne
-    @JoinColumn
-    Count batterCount;
-
-    @ManyToOne
-    @JoinColumn
-    Result result;
 
 
     public Batter(){
@@ -35,13 +26,7 @@ public class Batter extends Player {
         this.result = new Result(0,0,"");
     }
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public Result getResult() {
         return result;

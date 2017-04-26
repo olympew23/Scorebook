@@ -43,7 +43,8 @@ td{
 }
 li{
 
-    color: black;
+    color: whitesmoke;
+    font-size: large;
 }
 
 div#b {
@@ -77,7 +78,9 @@ body {
 
 }
 
+img{
 
+}
 
 h1{
     font-style: italic;

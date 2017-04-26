@@ -5,17 +5,9 @@ import javax.persistence.*;
 /**
  * Created by jerieshasmith on 4/11/17.
  */
-@Entity
-@Table(name= "counts")
+
 public class Count {
-    @Id
-    @GeneratedValue
-    int id;
-
-    @Column
     private int balls;
-
-    @Column
     private int strike;
 
     public Count() {
