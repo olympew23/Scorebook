@@ -24,7 +24,7 @@ public class GameController {
     static Score scores = new Score(0, 0);
     static Innings innings = new Innings(1, "T", 0, 0);
     static Count count = new Count(0, 0);
-    static Pitcher currentPitcher = new Pitcher("yamma");
+    static Pitcher currentPitcher = new Pitcher("Kevin");
     static ArrayList<Batter> players = new ArrayList<>();
     static ArrayList<Batter> playerList = new ArrayList<>();
     static Game games = new Game();

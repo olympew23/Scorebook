@@ -22,10 +22,11 @@ th{ color: white;
 }
 
 
-p{
+p {
     font-size: x-large;
     font-style: italic;
     font-family: "Times New Roman", Times, serif;
+    color: whitesmoke;
 }
 table {
     border:  thin;
@@ -41,7 +42,7 @@ td{
 
     color: whitesmoke;
 }
-li{
+li {
 
     color: whitesmoke;
 }
@@ -62,15 +63,11 @@ div {
 
 
 }
-#canvasDiv1{
-    text-align: center;
-}
+
 #canvasDiv {
     text-align: center;
 }
-p{ color: whitesmoke;
 
-}
 
 body {
     background: linear-gradient(to bottom, #336600 0%, #ff9900 100%);
@@ -85,9 +82,8 @@ body {
 
 }
 
-img{
-    text-align: center;
-}
+
+
 #animate { position: relative; ;  width: 500px; height: 100px; font-size: xx-large}
 h1{
     font-style: italic;
@@ -95,12 +91,13 @@ h1{
     border-bottom: solid;
     border: solid;
     color: whitesmoke;
+    text-shadow: darkgreen;
 
 
 }  /*}*/
 
 
-h2{
+h2 {
     font-style: italic;
     border-bottom: solid;
     text-align: center;
