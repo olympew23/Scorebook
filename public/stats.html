@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bootstrap Example</title>
+    <title>Interactive Score Book</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -10,10 +10,24 @@
     <script type="text/javascript" src="app.js"></script>
     <link rel="stylesheet" type="text/css" href="scorebook.css">
 
+<style>
+    #canvas1 {
+        text-align: center;
+        width: auto;
+    }
+   p {
+        font-size: x-large;
+        font-style: italic;
+        font-family: "Times New Roman", Times, serif;
+        color: whitesmoke;
+    }
 
+</style>
 
 </head>
-
+<script>
+    document.write(Date());
+</script>
 <body>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -40,12 +54,39 @@
 
                 <td>
                     <ol>
-                        <li>Mike | 1 |1</li>
+                        <li>Mike | 1 |3</li>
+                        <li>John | 1 |1</li>
+                        <li>Tim | 0 |0</li>
                         <li>8 | 0 |0</li>
                         <li>8 | 0 |0</li>
                         <li>8 | 0 |0</li>
                         <li>8 | 0 |0</li>
                         <li>8 | 0 |0</li>
+                        <li>8 | 0 |0</li>
+                        <li>8 | 0 |0</li>
+                        <li>8 | 0 |0</li>
+                        <li>8 | 0 |0</li>
+                        <li>8 | 0 |0</li>
+                        <li>8 | 0 |0</li>
+                        <li>8 | 0 |0</li>
+                        <li>88 | 0 |0</li>
+                        <li>8 | 0 |0</li>
+                        <li>8 | 0 |0</li>
+                        <li>8 | 0 |0</li>
+                        <li>8 | 0 |0</li>
+                        <li>8 | 0 |0</li>
+                        <li>8 | 0 |0</li>
+                        <li>8 | 0 |0</li>
+                        <li>8 | 0 |0</li>
+                        <li>88 | 0 |0</li>
+                        <li>8 | 0 |0</li>
+                        <li>8 | 0 |0</li>
+                        <li>8 | 0 |0</li>
+                        <li>8 | 0 |0</li>
+                        <li>8 | 0 |0</li>
+                        <li>8 | 0 |0</li>
+                        <li>8 | 0 |0</li>
+                        <li>88 | 0 |0</li>
                         <li>8 | 0 |0</li>
                         <li>8 | 0 |0</li>
                         <li>8 | 0 |0</li>
@@ -62,8 +103,8 @@
 <div class="col-sm-4">
     <div align="center">
     <h1>Score</h1>
-    <p>Home: 1</p>
-    <p>Away: 2</p>
+    <p>Home: 4</p>
+    <p>Away: 5</p>
 
 </div>
 </div>
@@ -75,15 +116,42 @@
         </tr>
             <td>
                 <ol>
+                    <li>Kevin  | 0 | 0</li>
                     <li>8 | 0 | 0</li>
                     <li>8 | 0 | 0</li>
+                    <li>88 | 0 | 0</li>
                     <li>88 | 0 | 0</li>
                     <li>8 | 0 | 0</li>
                     <li>8 | 0 | 0</li>
                     <li>8 | 0 | 0</li>
                     <li>8 | 0 | 0</li>
-                    <li>8 | 0 | 0</li>
-                    <li>8 | 0 | 0</li>
+                    <li>9 | 0 | 0</li>
+                    <li>99 | 0 | 0</li>
+                    <li>99 | 0 | 0</li>
+                    <li>9 | 0 | 0</li>
+                    <li>99 | 0 | 0</li>
+                    <li>9 | 0 | 0</li>
+                    <li>9 | 0 | 0</li>
+                    <li>99 | 0 | 0</li>
+                    <li>9 | 0 | 0</li>
+                    <li>9 | 0 | 0</li>
+                    <li>99 | 0 | 0</li>
+                    <li>99 | 0 | 0</li>
+                    <li>9 | 0 | 0</li>
+                    <li>99 | 0 | 0</li>
+                    <li>9 | 0 | 0</li>
+                    <li>9 | 0 | 0</li>
+                    <li>99 | 0 | 0</li>
+                    <li>9 | 0 | 0</li>
+                    <li>9 | 0 | 0</li>
+                    <li>9 | 0 | 0</li>
+                    <li>9 | 0 | 0</li>
+                    <li>9 | 0 | 0</li>
+                    <li>99 | 0 | 0</li>
+                    <li>99 | 0 | 0</li>
+                    <li>99 | 0 | 0</li>
+                    <li>9 | 0 | 0</li>
+                    <li>9 | 0 | 0</li>
                 </ol>
 
             </td>
@@ -92,21 +160,23 @@
 
 </div>
 </div>
-<div id="canvas"></div>
+
+<div id="canvas1">
 <img src="canvas.png">
+</div>
 
 <script type="text/javascript"> $(document).ready(function() {
     prepareCanvas();
 });</script>
 
-<p>Current Batter: 8</p>
 
+<p>Current Batter: 8</p>
 
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
             <h2>Pitch Count</h2>
-            <p> Name:88 3</p>
+            <p> Name:8 0</p>
 
         </div>
 
@@ -119,7 +189,7 @@
         <div class="col-sm-4">
             <h2>Innings</h2>
             <p> Outs: 0</p>
-            <p> Innings: 1 T</p>
+            <p> Innings: 1 B</p>
             <p>Current Batter: 8</p>
         </div>
 
