@@ -229,7 +229,7 @@ public class GameController {
     }
 
     @RequestMapping(path = "/add-user", method = RequestMethod.POST)
-    public String addUser(Model model, HttpSession session, String userName, String passWord) {
+    public String addUser(Model model, HttpSession session, String userName, String passWord)  {
         model.addAttribute("userName", userName);
         return "redirect:/user";
     }
